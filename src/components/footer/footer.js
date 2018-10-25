@@ -10,11 +10,11 @@ export const Footer = (props) => {
         icon:'facebook.png'
     },
         {
-            link: 'www.github.com/frechpriest',
+            link: 'https://github.com/frechpriest?tab=repositories',
             icon:'github.png'
         },
         {
-            link: 'www.gmail.com',
+            link: 'mailto:mateusz.basiak@gmail.com',
             icon:'email.png'
         },
         {

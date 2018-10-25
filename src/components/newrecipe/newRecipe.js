@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import FormFields from '../forms/forms'
+import style from './newRecipe.scss'
 
 class NewRecipe extends Component {
     constructor(props) {
@@ -54,8 +55,9 @@ class NewRecipe extends Component {
                     labelText: "Dodatki",
                     config: {
                         name: 'message_input',
-                        rows: 4,
-                        cols: 36
+                        rows: 8,
+                        cols: 36,
+                        placeholder:'Wpisz dodatki'
                     }, validation: {
                         required: false,
                     },
@@ -108,8 +110,9 @@ class NewRecipe extends Component {
 
     
         return (
-            <div className="container">
-            <form
+            
+            <div className={style.container}>
+            <form className={style.form}
                 onSubmit={this.submitForm}
             >
                 <FormFields
@@ -122,7 +125,8 @@ class NewRecipe extends Component {
                 <button type="submit" >Submit</button>
             </form>
             
-        </div>
+                </div>
+                
         )
     }
 }
