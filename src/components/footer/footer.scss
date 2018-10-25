@@ -1,5 +1,35 @@
 .footer{
-    background-color: green;
-    color:red;
-    font-size: 40px
+    
+    background-color: rgba(0, 0, 0, 0.8);
+    color:white;
+    position: fixed;
+    bottom:0;
+    width: 100vw;
+
+  
+
+    .container{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        .copy{
+            align-self: center;
+            margin-right: 45px;
+        }
+        
+    
+   
+    a{
+
+        img{
+            width:30px;
+            height: 30px;
+            margin:10px;
+            
+        }
+    
+    }
 }
+
+}
+

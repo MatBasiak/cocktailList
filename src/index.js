@@ -1,7 +1,14 @@
 import React,{Component} from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import{firebase} from './firebase/firebase'
+import { firebase } from './firebase/firebase'
+import styles from './index.scss'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGhost } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faGhost)
+
 //components
 import Header from '../src/components/header/header'
 import Footer from "../src/components/footer/footer"
@@ -13,7 +20,7 @@ class App extends Component{
     constructor(props) {
         super(props)
         this.state = {
-            islegal:false
+            islegal:true
         }
     }
 
@@ -28,7 +35,7 @@ class App extends Component{
         return (
             <BrowserRouter>
                 {this.state.islegal ?
-                    <div>
+                    <div className={styles.container} >
                         <Header />
                         <Routes{...this.props} />
                         <Footer />
@@ -45,8 +52,3 @@ firebase.auth().onAuthStateChanged((user) => {
     ReactDOM.render(<App auth={user} />, document.getElementById('app'));
 })
 
-
-
-// ReactDOM.render(<App auth={user}/>,
-//     document.getElementById("app")
-// );
