@@ -15,7 +15,7 @@ class NewRecipe extends Component {
                     config: {
                         name: 'name_input',
                         type: 'text',
-                        placeholder: "wpisz nazwe alkoholu"
+                        placeholder: "Podaj nazwę podstawowego alkoholu"
                         
                     },
                 
@@ -32,11 +32,11 @@ class NewRecipe extends Component {
                     element: "input",
                     value: "",
                     label: true,
-                    labelText: "Url do foto",
+                    labelText: "Adres Do zdjęcia",
                     config: {
                         name: 'url_input',
                         type: 'text',
-                        placeholder: "wpisz url do brazka"
+                        placeholder: "Podaj adress URL do zdjęcia"
                             
                     },
                     validation: {
@@ -57,7 +57,7 @@ class NewRecipe extends Component {
                         name: 'message_input',
                         rows: 8,
                         cols: 36,
-                        placeholder:'Wpisz dodatki'
+                        placeholder:'Wpisz dodatki do koktajlu'
                     }, validation: {
                         required: false,
                     },

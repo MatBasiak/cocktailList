@@ -1,7 +1,25 @@
 .header{
-    background: #947a7a;
+    background: #000000c2;
     border-bottom: 1px solid black;
     margin:0 3vw;
+
+    .links{
+        color:white;
+       .link{
+        border:2px solid black;
+        color:white;
+        font-size: 25px;
+        text-decoration: none;
+        background-color: yellow;
+
+       }
+    }
+    .menu{
+        color:white;
+        background-color: red;
+        width: 25;
+        height: 25;
+    }
     
 }
 .headerOpt{
@@ -14,8 +32,4 @@
 
 .logo img{
     width:50px;
-}
-.bars{
-    color :red;
-    font-size: 40px
 }

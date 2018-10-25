@@ -7,6 +7,31 @@ import SideNavigation from '../../navi/navi'
 
 const Header = (props) => {
 
+    const showMenu = () => {
+        
+
+    }
+
+
+    const links = [
+        {
+            link: 'leave',
+            name:'Leave'
+            
+        },
+        {
+            link: 'newrecipe',
+            name:'Dodaj Drinka'
+        }, {
+            link: 'mixer',
+            name:'Mixer'
+        },
+        {
+            link: 'login',
+            name:'Zaloguj'
+        }
+    ]
+
     const logo = () => (
         <Link to='/' className={style.logo}>
             <img alt='Shaker' src='/images/shaker.jpeg'/>
@@ -14,25 +39,17 @@ const Header = (props) => {
     );
    
     return (
-        <header className={style.header}>
-            <SideNavigation {...props}/>
-            <div className={style.headerOpt}>
-                <div className={style.bars}>
-            < FontAwesome name='bars'
-                         onClick={props.onOpenNav}
-                         style={{
-                             color: 'red',
-                             padding: '100px',
-                         }}/>
-
+        <header className={style.header}>          
+            <div>
+            {logo()}
+            </div>  
+            <div className={style.menu} >Menu</div>
+            <div className={style.links}>
+                {links.map((link) => (
+                <div className={style.link}><Link to={`${link.link}`}>{link.name}</Link></div>     )              
+            )}
             </div>
-                {logo()}
-
-            </div>
-            <Link to='/leave'>leave</Link>
-            <Link to="/newrecipe">new recipe</Link>
-            <Link to="/mixer">Miksuj</Link>
-            <Link to='/login'>zaloguj</Link>
+     
         </header>
     );
 };

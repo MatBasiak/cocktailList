@@ -125,9 +125,9 @@ const FormFields = (props) => {
                             onChange={
                                 (event)=>changeHandler(event, data.id)
                             }>
-                            {values.config.options.map((item, i) => {
+                            {values.config.options.map((item, i) => 
                                 <option key={i} value={item.val}>{item.text}</option>
-                            })}
+                            )}
                         </select>
                     </div>
                 )
