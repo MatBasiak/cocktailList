@@ -1,0 +1,137 @@
+*{
+    margin:0;
+    padding:0;
+
+    body{
+        background-image:linear-gradient(to right, rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.1) ), url('../../../docs/images/bar-209148_1920.jpg');
+    }
+
+    .container{
+       
+        background-image:linear-gradient(to right, rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.7) ), url('../../../docs/images/bar-209148_1920.jpg');
+        background-position: top;
+        background-size: cover;
+
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        transition: all ease-out;
+        
+
+        h1{
+            font-size: 50px;
+            color:black;
+            text-decoration: underline;
+            animation-name:moveInTop;
+             animation-duration:1.5s;
+        }
+       
+        .button{
+                display: flex;
+                margin-top: 25px;
+               
+
+                a{
+                    text-decoration: none;
+                    color: black;
+                    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+                    
+
+                }
+
+            .b1{
+                    animation-name:moveInLeft;
+                    animation-duration:1.5s;
+                    cursor: pointer;
+                }
+            .b2{
+                    animation-name:moveInRight;
+                    animation-duration:1.5s;
+                }
+
+            div{
+                border:1px solid black;
+                background-color: rgba(220, 229, 230, 0.7);           
+                margin:10px;
+                width: 200px;
+                height: 100px;
+                font-size: 30px;
+                border-radius: 5%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all ease-in;
+                box-shadow:3px 3px 10px grey;
+                text-shadow: 1px 1px 2px black;
+                
+
+            
+                
+               
+
+                &:hover{
+                    color:white;
+                    box-shadow:5px 5px 15px grey;
+                    transform: scale(1.05, 1.05);
+                    
+                
+            }
+            a{
+                
+            }
+           
+
+            }
+        }
+    
+       
+        
+    }
+}
+
+
+@keyframes moveInLeft{
+0%{
+    opacity:0;
+    transform:translateX(-200px);
+    
+}
+100%{
+    opacity: 1;
+    transform: translate(0)
+
+}
+
+
+}
+@keyframes moveInRight{
+    0%{
+        opacity:0;
+        transform:translateX(200px);
+        
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0)
+    
+    }
+    
+    
+    }
+    @keyframes moveInTop{
+        0%{
+            opacity:0;
+            transform:translateY(-200px);
+            
+        }
+        100%{
+            opacity: 1;
+            transform: translate(0)
+        
+        }
+        
+        
+        }
