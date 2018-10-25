@@ -4,7 +4,8 @@
     box-sizing: border-box;
 
     body{
-        background-image:linear-gradient(to right, rgba(255, 255, 255, 0.1),rgba(255, 255, 255, 0.1) ), url('../../../docs/images/bar-209148_1920.jpg');
+        background-image:linear-gradient(to right, rgba(255, 255, 255, 0.3),rgba(255, 255, 255, 0.2) ), url('../../../docs/images/pixelbar.jpg');
+        background-size: cover;
     }
 
     .container{
