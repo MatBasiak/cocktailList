@@ -3,11 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { firebase } from './firebase/firebase'
 import styles from './index.scss'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGhost } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faGhost)
 
 //components
 import Header from '../src/components/header/header'
