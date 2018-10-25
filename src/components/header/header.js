@@ -33,7 +33,7 @@ const Header = (props) => {
 
     const logo = () => (
         <Link to='/' className={style.logo}>
-            <img alt='Shaker' src='/images/shaker.jpeg'/>
+            <img alt='Shaker' src='./images/shaker.jpeg'/>
         </Link>
     );
    
