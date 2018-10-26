@@ -24,7 +24,7 @@ class Routes extends Component {
     render() {
         return (
                   <Switch>
-                    <Route path ="/" exact component={Mainpage} />
+                    <Route path ="/" exact component={Mixer} />
                     <Route path ="/newrecipe" exact component={NewRecipe} />
                     <Route path="/leave" component={Leave} />
                     <Route path="/mixer" component={Mixer} />

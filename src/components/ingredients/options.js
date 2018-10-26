@@ -1,12 +1,26 @@
-import React from 'react'
+import React,{PureComponent} from 'react'
 
 
-const Options = (props) => {
+class Options extends PureComponent{
+    constructor(props) {
+        super(props)
+        this.state = {
+            value:'pimms'
+        }
+
+        this.handleChange=this.handleChange.bind(this)
+    }
     
+    
+     handleChange(event){
+        this.setState({ value: event.target.value });
+        console.log(event.target.value);
+    };
+    render() {
         return (
 
-            <select name={props.name}>
-                {props.items.map((item, i) => 
+            <select onChange={this.handleChange} name={this.props.name} value={this.state.value}>
+                {this.props.items.map((item, i) =>
                    
                     <option key={i} value={item.Alkohol}>{item.Alkohol}</option>
                 )}
@@ -14,6 +28,7 @@ const Options = (props) => {
             </select>
     
         )
+    }
     }
 
         

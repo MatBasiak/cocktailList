@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import FormFields from '../forms/forms'
 import style from './newRecipe.scss'
+import {firebaseDB} from "../../firebase/firebase"
 
 class NewRecipe extends Component {
     constructor(props) {
@@ -68,6 +69,8 @@ class NewRecipe extends Component {
             }
             
         }
+        this.updateForm = this.updateForm.bind(this)
+        this.submitForm= this.submitForm.bind(this)
     }
     
     

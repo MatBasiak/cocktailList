@@ -41,7 +41,9 @@ class selector extends Component {
                 })
                 this.setState({
                     ingredients: ingre,
-                    options:true
+                   
+                    options: true,
+                    
                 })
             })
             .catch((e) => console.log(e));
@@ -58,7 +60,7 @@ render(){
         <div>
             
             {console.log(this.state.ingredients)}
-            {this.state.options && <FormFields formData={this.state.formData}
+            {this.state.options && <FormFields data={this.state.ingredients} formData={this.state.formData}
              change={(newState)=> this.updateForm(newState)}/>}
 
             {this.state.options && <Options items={this.state.ingredients} />}

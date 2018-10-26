@@ -1,56 +1,65 @@
-import React from 'react';
+import React,{Component} from 'react';
 import style from './header.scss';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Links from '../links'
 
 
 
-const Header = (props) => {
-
-    const showMenu = () => {
-        
-
-    }
-
-
-    const links = [
-        {
-            link: 'leave',
-            name:'Leave'
+class Header extends Component{
+    constructor(props) {
+        super(props)
+        this.state = {
+            links:[
+                {
+                    link: 'leave',
+                    name: 'Leave',
+                    type: "text",
+                    class:  style.link 
+                    
             
-        },
-        {
-            link: 'newrecipe',
-            name:'Dodaj Drinka'
-        }, {
-            link: 'mixer',
-            name:'Mixer'
-        },
-        {
-            link: 'login',
-            name:'Zaloguj'
+                },
+                {
+                    link: 'newrecipe',
+                    name: 'Dodaj Drinka',
+                    type: "text",
+                    class:style.link
+                    
+                }, {
+                    link: 'mixer',
+                    name: 'Mixer',
+                    type: "text",
+                    class:style.link
+                },
+                {
+                    link: 'login',
+                    name: 'Zaloguj',
+                    type: "text",
+                    class:style.link
+                }
+            ]
         }
-    ]
+      
+                
+}
+    
 
-    const logo = () => (
-        <Link to='/' className={style.logo}>
-            <img alt='Shaker' src='./images/shaker.jpeg'/>
+    
+    render() {
+        return (
+            <header className={style.header}>
+                <div>
+                <Link to='/' className={style.logo}>
+            <img alt='Shaker' src='./images/shaker.jpeg' />
         </Link>
-    );
-   
-    return (
-        <header className={style.header}>          
-            <div>
-            {logo()}
-            </div>  
-            <div className={style.menu} >Menu</div>
-            <div className={style.links}>
-                {links.map((link) => (
-                <div className={style.link}><Link to={`${link.link}`}>{link.name}</Link></div>     )              
-            )}
-            </div>
+                </div>
+                <div className={style.menu} >Menu</div>
+                <div className={style.links}>
+                    <Links data={this.state.links} />
+                </div>
      
-        </header>
-    );
+            </header>
+        );
+    }
 };
 
 export default Header;

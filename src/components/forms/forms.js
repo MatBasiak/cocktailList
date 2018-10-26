@@ -33,9 +33,9 @@ const FormFields = (props) => {
         
 
         if (blur) {
-            let validData = validate(newState[id]) // validuje new state value
-            newState[id].valid = validData[0];// sprawdza czy validacja required czy nie
-            newState[id].validationMessage = validData[1];// tutaj mamy validationMessage 
+            let validData = validate(newState[id])
+            newState[id].valid = validData[0];
+            newState[id].validationMessage = validData[1];
         }
                
                 newState[id].touched=blur
@@ -52,16 +52,16 @@ const FormFields = (props) => {
         let error = [true, '']
 
         if (element.validation.minLen) {
-            const valid = element.value.length >= element.validation.minLen; // valid bedzie true or false w zaleznosci od tego co wpiszemy do inputa
+            const valid = element.value.length >= element.validation.minLen; 
             const message = `${!valid ? 'must be greater then ' + element.validation.minLen : ''}`
             error=!valid? [valid,message]:error
    
         }
         
         if (element.validation.required) {
-            const valid = element.value.trim() !== "";// trimu usowa whitespaces z obu stron stringa , funkcja porownuje czy element nie jest pusty jezeli jest pusty zwraca false
-            const message = `${!valid ? 'This field is required' : ''}`// jezeli valid zwraca nietrue to wyswietlamy message 
-            error=!valid? [valid,message]:error// w tablicy zwracamy valid=false i message rowne message 
+            const valid = element.value.trim() !== "";
+            const message = `${!valid ? 'This field is required' : ''}`
+            error=!valid? [valid,message]:error/e 
         }
 
         return error;
@@ -69,7 +69,7 @@ const FormFields = (props) => {
     const showValidation = (data) => {
         let errorMessage = null;
 
-        if (data.validation && !data.valid) {// jezeli validacja jest true i jezeli valid jest false przypisz do error message jsx ponizej
+        if (data.validation && !data.valid) {
             errorMessage = (
                 <div className="label_error">
                 {data.validationMessage}
