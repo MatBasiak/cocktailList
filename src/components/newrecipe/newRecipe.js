@@ -1,7 +1,8 @@
 import React,{Component} from 'react'
 import FormFields from '../forms/forms'
 import style from './newRecipe.scss'
-import {firebaseDB} from "../../firebase/firebase"
+import { firebaseDB } from "../../firebase/firebase"
+import Option from '../ingredients/options'
 
 class NewRecipe extends Component {
     constructor(props) {
@@ -99,7 +100,8 @@ class NewRecipe extends Component {
            
             firebaseDB.ref('coktails/vodkabase').push(dataTosubmit)
                 .then(() => {
-                console.log('new user added')
+                    console.log('new cocktail added')
+                    alert('Dodano koktail do bazy')
                 }).catch(e=> console.log(e))
             
         }
@@ -116,8 +118,10 @@ class NewRecipe extends Component {
             
             <div className={style.container}>
             <form className={style.form}
-                onSubmit={this.submitForm}
-            >
+                    onSubmit={this.submitForm}
+                    
+                >
+                    
                 <FormFields
                    formData={this.state.formData}
                    onblur={(newState)=> this.updateForm(newState)}
@@ -125,7 +129,7 @@ class NewRecipe extends Component {
                 />
 
 
-                <button type="submit" >Submit</button>
+                <button type="submit" >Dodaj koktail</button>
             </form>
             
                 </div>

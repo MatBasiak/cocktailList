@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
-import {firebaseDB} from "../../firebase/firebase"
+import { firebaseDB,firebaseLooper,firebaseStrong} from "../../firebase/firebase"
+import Looper from "../../firebase/looper"
 import FormFields from "../forms/forms"
 import Options from './options'
 
@@ -10,6 +11,8 @@ class selector extends Component {
     
         this.state = {
             ingredients: [1, 2, 3],
+            choice:'',
+
             options: false,
             formData: {
                 Alko: {
@@ -29,16 +32,17 @@ class selector extends Component {
                 }
             }
         }
-        firebaseDB.ref('ingredients/strong').once('value')
+        firebaseStrong.once('value')
             .then((snapshot) => {
-                const ingre = [];
+                const ingre = firebaseLooper(snapshot)
 
-                snapshot.forEach((childSnapshot) => {
-                    ingre.push({
-                        id: childSnapshot.key,
-                        ...childSnapshot.val()
-                    })
-                })
+                // snapshot.forEach((childSnapshot) => {
+                //     ingre.push({
+                //         id: childSnapshot.key,
+                //         ...childSnapshot.val()
+                //     })
+                // })
+                    
                 this.setState({
                     ingredients: ingre,
                    
@@ -54,16 +58,22 @@ class selector extends Component {
             formData: newState
         })
     }
+    updateChoice(choosen) {
+        this.setState({
+            choice:choosen
+        })
+    }
 
 render(){
     return (
         <div>
             
-            {console.log(this.state.ingredients)}
-            {this.state.options && <FormFields data={this.state.ingredients} formData={this.state.formData}
-             change={(newState)=> this.updateForm(newState)}/>}
+            {/* {console.log(this.state.ingredients)} */}
+           { console.log(this.state.choice)}
+            {/* {this.state.options && <FormFields data={this.state.ingredients} formData={this.state.formData}
+             change={(newState)=> this.updateForm(newState)}/>} */}
 
-            {this.state.options && <Options items={this.state.ingredients} />}
+            {this.state.options && <Options items={this.state.ingredients} data={(choosen=>this.updateChoice(choosen))}/>}
             
             
         </div>

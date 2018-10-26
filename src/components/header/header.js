@@ -20,7 +20,7 @@ class Header extends Component{
                 },
                 {
                     link: 'newrecipe',
-                    name: 'Dodaj Drinka',
+                    name: 'Dodaj Koktail',
                     type: "text",
                     class:style.link
                     

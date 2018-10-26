@@ -10,8 +10,40 @@ import * as firebase from 'firebase';
     messagingSenderId: "388045015304"
   };
   firebase.initializeApp(config);
-const firebaseDB = firebase.database();
+
 const googleAuth = new firebase.auth.GoogleAuthProvider();
+const firebaseDB = firebase.database();
+const firebaseStrong = firebaseDB.ref('ingredients/strong');
+const firebaseSoft = firebaseDB.ref('ingredients/soft');
+const firebaseLowAlc = firebaseDB.ref('ingredients/strong');
+const firebaseAddOns = firebaseDB.ref('ingredients/AddOns');
+
+const firebaseCocktailsVodka = firebaseDB.ref('cocktails/vodkabase');
+const firebaseCocktailsRum = firebaseDB.ref('cocktails/rumbase');
+const firebaseCocktailsGin = firebaseDB.ref('cocktails/ginbase');
+const firebaseCocktailsWhisky = firebaseDB.ref('cocktails/whiskybase');
+const firebaseCocktailsTequilla = firebaseDB.ref('cocktails/tequillabase');
+const firebaseCocktailsBurbon = firebaseDB.ref('cocktails/burbonbase');
+const firebaseCocktailsCachaca = firebaseDB.ref('cocktails/cachacabase');
+const firebaseCocktailsBrandy = firebaseDB.ref('cocktails/brandybase');
+
+
+const firebaseLooper = (snapshot) => {
+  const data = [];
+ 
+      
+  snapshot.forEach((childSnapshot) => {
+    data.push({
+      id: childSnapshot.key,
+      ...childSnapshot.val()
+          
+    })
+  });
+  return data;
+
+}
+
+
   
 
 // firebaseDB.ref('ingredients/strong').once('value')// once returning a promise containing data we requesting
@@ -27,6 +59,8 @@ const googleAuth = new firebase.auth.GoogleAuthProvider();
 export {
     firebase,
   firebaseDB,
-    googleAuth
+  googleAuth, firebaseStrong, firebaseSoft, firebaseLowAlc,
+  firebaseAddOns, firebaseCocktailsVodka, firebaseCocktailsRum, firebaseCocktailsGin, firebaseCocktailsWhisky, firebaseCocktailsTequilla, firebaseCocktailsBurbon, firebaseCocktailsCachaca, firebaseCocktailsBrandy,
+    firebaseLooper
     
 }

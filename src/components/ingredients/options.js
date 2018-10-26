@@ -13,11 +13,14 @@ class Options extends PureComponent{
     
     
      handleChange(event){
-        this.setState({ value: event.target.value });
-        console.log(event.target.value);
+         this.setState({ value: event.target.value });
+         this.props.data(this.state.value)
+        // console.log(event.target.value);
     };
     render() {
+        
         return (
+            
 
             <select onChange={this.handleChange} name={this.props.name} value={this.state.value}>
                 {this.props.items.map((item, i) =>
