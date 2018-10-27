@@ -1,0 +1,27 @@
+.container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+
+    .title{
+        text-transform: capitalize;
+        font-size:15px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+    }
+
+    img{
+        width:150px;
+        height: 140px;
+        margin-top:20px;
+        margin: 3px;
+        &:hover{
+            transform: scale(1.5);
+            cursor:pointer;
+            
+        }
+
+    }
+}

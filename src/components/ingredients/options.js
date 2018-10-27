@@ -1,4 +1,5 @@
-import React,{PureComponent} from 'react'
+import React, { PureComponent } from 'react'
+import style from './options.scss'
 
 
 class Options extends PureComponent{

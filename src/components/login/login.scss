@@ -1,0 +1,22 @@
+.container{
+    background: #222121ad;
+    border-bottom: 1px solid black;
+    margin:0 3vw;
+    font-size: 25px;
+    color:white;
+    height: 77vh;
+    display:flex;
+    justify-content: center;
+     button{
+        background: rgba(104, 105, 114, 0.747);
+        color: #fff;
+        font-size: 15px;
+        padding: 10px 20px;
+        width: 40vw;
+        height: 4vh;       
+        text-transform: uppercase;
+        margin-top: 10vh;
+
+    
+     }
+}

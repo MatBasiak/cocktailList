@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Database from './database'
+import style from './listOfCoktails.scss'
 
 
 
@@ -13,10 +14,10 @@ console.log(props);
   
     render() {
         return (
-            <div>
-                {`wybrales drinka na bazie ${this.props.data} i ma byc ${this.props.taste} w smaku`}
+            <div className={style.container}>
+                <div className={style.info}>{`Wybrales drinka na bazie ${this.props.data} i ma byc ${this.props.taste} w smaku`}</div>
             
-                <Database base={this.props.data} taste={this.props.taste} />
+               <div> <Database base={this.props.data} taste={this.props.taste} /></div>
                 </div>
         );
     }

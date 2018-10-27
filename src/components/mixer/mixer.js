@@ -23,7 +23,7 @@ class Mixer extends Component {
     render() {
         return (
         <div className={style.container}>
-        {this.state.startMixing && <ListOfIngredients/> }
+        {/* {this.state.startMixing && <ListOfIngredients/> } */}
         {!this.state.startMixing && <Button mixer={() => this.mixer()}>mixuj</Button>}
         {this.state.startMixing && <IngredientsSelector/>}
         </div >

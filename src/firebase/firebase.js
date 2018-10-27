@@ -26,6 +26,7 @@ const firebaseCocktailsTequilla = firebaseDB.ref('cocktails/tequillabase');
 const firebaseCocktailsBurbon = firebaseDB.ref('cocktails/burbonbase');
 const firebaseCocktailsCachaca = firebaseDB.ref('cocktails/cachacabase');
 const firebaseCocktailsBrandy = firebaseDB.ref('cocktails/brandybase');
+const firebaseCocktailsElse = firebaseDB.ref('cocktails/else');
 const firebaseTaste = firebaseDB.ref('ingredients/taste');
 
 
@@ -59,7 +60,7 @@ const firebaseLooper = (snapshot) => {
 
 export {
     firebase,
-  firebaseDB,
+  firebaseDB,firebaseCocktailsElse,
   googleAuth, firebaseStrong, firebaseSoft, firebaseLowAlc,
   firebaseAddOns, firebaseCocktailsVodka, firebaseCocktailsRum, firebaseCocktailsGin, firebaseCocktailsWhisky, firebaseCocktailsTequilla, firebaseCocktailsBurbon, firebaseCocktailsCachaca, firebaseCocktailsBrandy,firebaseTaste,firebaseLooper
 

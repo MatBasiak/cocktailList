@@ -13,7 +13,7 @@ class listOfIngredients extends Component {
     render() {
         return (
             <div>
-                lista skladnikow w tabeli
+                
             </div>
         );
     }

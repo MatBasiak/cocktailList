@@ -52,6 +52,7 @@ class Header extends Component{
             <img alt='Shaker' src='./images/shaker.jpeg' />
         </Link>
                 </div>
+                <div className={style.title}>czym by tu się dzisiaj napier***ić ....?</div>
                 <div className={style.menu} >Menu</div>
                 <div className={style.links}>
                     <Links data={this.state.links} />

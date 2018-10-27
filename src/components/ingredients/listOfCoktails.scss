@@ -1,0 +1,9 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    .info{
+        text-transform: capitalize;
+        margin:45px;
+        text-align: center
+    }
+}

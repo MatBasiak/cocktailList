@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { firebaseLooper,firebaseStrong,firebaseCocktailsVodka} from "../../firebase/firebase"
+import { firebaseLooper, firebaseStrong, firebaseCocktailsVodka,firebaseCocktailsBurbon} from "../../firebase/firebase"
+import style from './database.scss'
 
 
 
@@ -34,14 +35,17 @@ class Database extends Component {
 
 
         return (
-            <div>
+            <div className={style.container}>
                 {/* {JSON.stringify(this.state.list)} */}
-                    <ul>
+                    
                     {this.state.list.map((item ,i) => 
-                        <li key={i}>{item.name}><img src={`./images/${item.image}`} />     </li>
+                    <div key={i} className={style.title}>{item.name}
+                        <img src={`./images/${item.image}`}/>
+                        {/* <img src={`{item.image}`}/>    */}
+                    </div>
                     
                     )}
-                    </ul>
+                    
                 {console.log(this.state.list)}
             </div>
         );

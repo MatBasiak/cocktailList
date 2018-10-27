@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
-import { firebaseDB,firebaseLooper,firebaseStrong,firebaseTaste} from "../../firebase/firebase"
+import { firebaseDB, firebaseLooper, firebaseStrong, firebaseTaste } from "../../firebase/firebase"
+import style from './selector.scss'
 
 import Options from './options'
 import OptionsTaste from './optionsTaste'
@@ -71,16 +72,16 @@ class selector extends Component {
 
 render(){
     return (
-        <div>
+        <div className={style.container}>
             
             {/* {console.log(this.state.ingredients)} */}
            
             {/* {this.state.options && <FormFields data={this.state.ingredients} formData={this.state.formData}
              change={(newState)=> this.updateForm(newState)}/>} */}
 
-            {this.state.options && <Options items={this.state.ingredients} data={(choosen => this.updateChoice(choosen))} />}
-            {this.state.optionSecond && <OptionsTaste items={this.state.taste} data={(choosenTaste => this.updateChoiceOfTaste(choosenTaste))} />}
-            {this.state.option3&&<ListOfCocktails data={this.state.choice} taste={this.state.choiceTaste} />}
+            <div className={style.option}>{this.state.options && <Options items={this.state.ingredients} data={(choosen => this.updateChoice(choosen))} />}
+            {this.state.optionSecond && <OptionsTaste items={this.state.taste} data={(choosenTaste => this.updateChoiceOfTaste(choosenTaste))} />}</div>
+            <div className={style.cocktailList} >{this.state.option3&&<ListOfCocktails data={this.state.choice} taste={this.state.choiceTaste} />}</div>
 
             
             
