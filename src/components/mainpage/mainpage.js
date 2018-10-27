@@ -10,7 +10,7 @@ class Mainpage extends Component {
   render() {
     return (
       <div>
-        to jest projekt koncowy na zajeciech w szkole programowania coderslab
+       <DrinkOfADay/>
       </div>
      
     )

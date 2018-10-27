@@ -1,7 +1,7 @@
 import React,{PureComponent} from 'react'
 
 
-class Options extends PureComponent{
+class OptionsTaste extends PureComponent{
     constructor(props) {
         super(props)
         this.state = {
@@ -32,7 +32,7 @@ class Options extends PureComponent{
             <select onChange={this.handleChange} name={this.props.name} value={this.state.value}>
                 {this.props.items.map((item, i) =>
                    
-                    <option key={i} value={item.Alkohol}>{item.Alkohol}</option>
+                    <option key={i} value={item.name}>{item.name}</option>
                 )}
             
             </select>
@@ -44,4 +44,4 @@ class Options extends PureComponent{
         
     
 
-export default Options
+export default OptionsTaste

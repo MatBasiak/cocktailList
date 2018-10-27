@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import FormFields from '../forms/forms'
 import style from './newRecipe.scss'
-import { firebaseDB } from "../../firebase/firebase"
+import { firebaseDB, firebaseTaste } from "../../firebase/firebase"
 import Option from '../ingredients/options'
 
 class NewRecipe extends Component {
@@ -9,7 +9,7 @@ class NewRecipe extends Component {
         super(props)
         this.state = {
             formData: {
-                name: {
+                Taste: {
                     element: "input",
                     value: "",
                     label: true,
@@ -28,47 +28,48 @@ class NewRecipe extends Component {
                     valid: true,
                     touched: false,
                     validationMessage: 'dodaj Alko'
-                },
-                    
-                image: {
-                    element: "input",
-                    value: "",
-                    label: true,
-                    labelText: "Adres Do zdjęcia",
-                    config: {
-                        name: 'url_input',
-                        type: 'text',
-                        placeholder: "Podaj adress URL do zdjęcia"
-                            
-                    },
-                    validation: {
-                        required: false,
-                        minLen: 1
-                    },
-                    valid: true,
-                    touched: false,
-                    validationMessage: 'podaj adres'
-                   
-                },
-                cokctail: {
-                    element: "textarea",
-                    value: "",
-                    label: true,
-                    labelText: "Dodatki",
-                    config: {
-                        name: 'message_input',
-                        rows: 8,
-                        cols: 36,
-                        placeholder:'Wpisz dodatki do koktajlu'
-                    }, validation: {
-                        required: false,
-                    },
-                    valid: true
-                   
-                    
                 }
-            }
+                    
+                //     image: {
+                //         element: "input",
+                //         value: "",
+                //         label: true,
+                //         labelText: "Adres Do zdjęcia",
+                //         config: {
+                //             name: 'url_input',
+                //             type: 'text',
+                //             placeholder: "Podaj adress URL do zdjęcia"
+                            
+                //         },
+                //         validation: {
+                //             required: false,
+                //             minLen: 1
+                //         },
+                //         valid: true,
+                //         touched: false,
+                //         validationMessage: 'podaj adres'
+                   
+                //     },
+                //     cokctail: {
+                //         element: "textarea",
+                //         value: "",
+                //         label: true,
+                //         labelText: "Dodatki",
+                //         config: {
+                //             name: 'message_input',
+                //             rows: 8,
+                //             cols: 36,
+                //             placeholder:'Wpisz dodatki do koktajlu'
+                //         }, validation: {
+                //             required: false,
+                //         },
+                //         valid: true
+                   
+                    
+                //     }
+                // }
             
+            }
         }
         this.updateForm = this.updateForm.bind(this)
         this.submitForm= this.submitForm.bind(this)
@@ -98,7 +99,7 @@ class NewRecipe extends Component {
         if (formIsValid) {
             
            
-            firebaseDB.ref('coktails/vodkabase').push(dataTosubmit)
+            firebaseTaste.push(dataTosubmit)
                 .then(() => {
                     console.log('new cocktail added')
                     alert('Dodano koktail do bazy')

@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
-import { firebaseDB,firebaseLooper,firebaseStrong} from "../../firebase/firebase"
-import Looper from "../../firebase/looper"
-import FormFields from "../forms/forms"
+import { firebaseDB,firebaseLooper,firebaseStrong,firebaseTaste} from "../../firebase/firebase"
+
 import Options from './options'
+import OptionsTaste from './optionsTaste'
 
 class selector extends Component {
    
@@ -11,43 +11,35 @@ class selector extends Component {
     
         this.state = {
             ingredients: [1, 2, 3],
-            choice:'',
+            choice: '',
+            taste:'',
 
             options: false,
-            formData: {
-                Alko: {
-                    element: "select",
-                    value: "",
-                    label: true,
-                    labelText: "wybierz alko",
-                    config: {
-                        name: 'message_input',
-                        options: [
-                            { val: "1", text: '10-20' },
-                            { val: "2", text: '20-30' },
-                            { val: "3", text: '+30' }
-                        ]
-                    },
-
-                }
-            }
+            optionSecond: false
+            
         }
         firebaseStrong.once('value')
             .then((snapshot) => {
                 const ingre = firebaseLooper(snapshot)
-
-                // snapshot.forEach((childSnapshot) => {
-                //     ingre.push({
-                //         id: childSnapshot.key,
-                //         ...childSnapshot.val()
-                //     })
-                // })
-                    
+     
                 this.setState({
                     ingredients: ingre,
                    
                     options: true,
                     
+                })
+            })
+            .catch((e) => console.log(e));
+    
+        firebaseTaste.once('value')
+            .then((snapshot) => {
+                const taste = firebaseLooper(snapshot)
+
+                this.setState({
+                    taste: taste,
+           
+                    
+            
                 })
             })
             .catch((e) => console.log(e));
@@ -60,7 +52,14 @@ class selector extends Component {
     }
     updateChoice(choosen) {
         this.setState({
-            choice:choosen
+            choice: choosen,
+            optionSecond:true
+        })
+    }
+    updateChoiceOf(choosenTaste) {
+        this.setState({
+            taste: choosenTaste,
+           
         })
     }
 
@@ -73,7 +72,8 @@ render(){
             {/* {this.state.options && <FormFields data={this.state.ingredients} formData={this.state.formData}
              change={(newState)=> this.updateForm(newState)}/>} */}
 
-            {this.state.options && <Options items={this.state.ingredients} data={(choosen=>this.updateChoice(choosen))}/>}
+            {this.state.options && <Options items={this.state.ingredients} data={(choosen => this.updateChoice(choosen))} />}
+            {this.state.optionSecond && <OptionsTaste items={this.state.taste} data={(choosenTaste=>this.updateChoiceOfTaste(choosenTaste))}/>}
             
             
         </div>
