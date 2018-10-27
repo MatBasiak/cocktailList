@@ -29,7 +29,7 @@ class Routes extends Component {
                     <Route path="/leave" component={Leave} />
                     <Route path="/mixer" component={Mixer} />
                     <Route path="/login" exact component={Login} />
-                {/* <PrivateRoute isLogged={this.props.auth} path='/newrecipe' exact component={newRecipe}/> */}
+                {/* <PrivateRoute isLogged={this.props.auth} path='/newrecipe' exact component={NewRecipe}/> */}
                     <Route path='*' component={NotFound} />
                  </Switch>
                  

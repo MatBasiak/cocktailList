@@ -5,7 +5,7 @@ class OptionsTaste extends PureComponent{
     constructor(props) {
         super(props)
         this.state = {
-            value: ''
+            value: 'Wybierz'
         }
 
         
@@ -29,7 +29,7 @@ class OptionsTaste extends PureComponent{
         return (
             
 
-            <select onChange={this.handleChange} name={this.props.name} value={this.state.value}>
+            <select onChange={this.handleChange} name={this.props.name} value={this.state.value} >
                 {this.props.items.map((item, i) =>
                    
                     <option key={i} value={item.name}>{item.name}</option>

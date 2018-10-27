@@ -23,7 +23,11 @@ class Footer extends Component{
             {
                 link: 'www.skype.com',
                 icon: 'skype.png'
-            }
+            },
+                {
+                    link: 'www.linkedin.com',
+                    icon: 'pobrane.png'
+                }
     
             ]
         }

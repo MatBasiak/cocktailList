@@ -18,7 +18,7 @@ const firebaseSoft = firebaseDB.ref('ingredients/soft');
 const firebaseLowAlc = firebaseDB.ref('ingredients/strong');
 const firebaseAddOns = firebaseDB.ref('ingredients/AddOns');
 
-const firebaseCocktailsVodka = firebaseDB.ref('cocktails/vodkabase');
+const firebaseCocktailsVodka = firebaseDB.ref('coktails/vodkabase'); ///blad w zapisei
 const firebaseCocktailsRum = firebaseDB.ref('cocktails/rumbase');
 const firebaseCocktailsGin = firebaseDB.ref('cocktails/ginbase');
 const firebaseCocktailsWhisky = firebaseDB.ref('cocktails/whiskybase');

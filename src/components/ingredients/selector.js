@@ -3,6 +3,7 @@ import { firebaseDB,firebaseLooper,firebaseStrong,firebaseTaste} from "../../fir
 
 import Options from './options'
 import OptionsTaste from './optionsTaste'
+import ListOfCocktails from './listOfCocktails'
 
 class selector extends Component {
    
@@ -12,10 +13,12 @@ class selector extends Component {
         this.state = {
             ingredients: [1, 2, 3],
             choice: '',
-            taste:'',
+            taste: '',
+            choiceTaste:'',
 
             options: false,
-            optionSecond: false
+            optionSecond: false,
+            option3:false
             
         }
         firebaseStrong.once('value')
@@ -37,6 +40,7 @@ class selector extends Component {
 
                 this.setState({
                     taste: taste,
+                    
            
                     
             
@@ -54,11 +58,13 @@ class selector extends Component {
         this.setState({
             choice: choosen,
             optionSecond:true
+           
         })
     }
-    updateChoiceOf(choosenTaste) {
+    updateChoiceOfTaste(choosenTaste) {
         this.setState({
-            taste: choosenTaste,
+            choiceTaste: choosenTaste,
+            option3:true
            
         })
     }
@@ -68,12 +74,14 @@ render(){
         <div>
             
             {/* {console.log(this.state.ingredients)} */}
-           { console.log(this.state.choice)}
+           
             {/* {this.state.options && <FormFields data={this.state.ingredients} formData={this.state.formData}
              change={(newState)=> this.updateForm(newState)}/>} */}
 
             {this.state.options && <Options items={this.state.ingredients} data={(choosen => this.updateChoice(choosen))} />}
-            {this.state.optionSecond && <OptionsTaste items={this.state.taste} data={(choosenTaste=>this.updateChoiceOfTaste(choosenTaste))}/>}
+            {this.state.optionSecond && <OptionsTaste items={this.state.taste} data={(choosenTaste => this.updateChoiceOfTaste(choosenTaste))} />}
+            {this.state.option3&&<ListOfCocktails data={this.state.choice} taste={this.state.choiceTaste} />}
+
             
             
         </div>

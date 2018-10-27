@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import DrinkOfADay from '../drinkofaday/drinkofaday'
 
 
 

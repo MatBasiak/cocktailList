@@ -1,9 +1,8 @@
 import React from 'react'
 
-export default function drinkofaday() {
+export default function DrinkOfADay () {
   return (
     <div>
-      
-    </div>
+tu bedzie drink of the day    </div>
   )
 }
