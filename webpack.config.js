@@ -1,6 +1,28 @@
 const webpack = require("webpack");
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
+const ugly = new UglifyJsPlugin({
+    uglifyOptions: {
+        mangle: true,
+        compress: {
+            sequences: true,
+            dead_code: true,
+            conditionals: true,
+            booleans: true,
+            unused: true,
+            if_return: true,
+            join_vars: true,
+            drop_console: true,
+            drop_debugger: true,
+            evaluate: true
+        },
+        output: {
+            comments: false
+        }
+    },
+    extractComments: true
+});
+
 module.exports = {
     module: {
         rules: [
@@ -38,7 +60,7 @@ module.exports = {
     resolve: {
         extensions: ["*",".js",".jsx"]
     },
-
+    // plugins: [ugly],
     entry: "./src/index.js",
     output: {
         path: __dirname + "/docs",
@@ -51,7 +73,8 @@ module.exports = {
           }
     },
     optimization: {
-      minimizer: [new UglifyJsPlugin()]
-    }
+        minimize: true,
+        minimizer: [ugly]
+      }
    
 };
