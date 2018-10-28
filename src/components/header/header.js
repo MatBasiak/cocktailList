@@ -71,18 +71,19 @@ handleClick=()=>{
         return (
             <header className={style.header}>
                 <div>
-                <Link to='/' className={style.logo}>
+            <Link to='/' className={style.logo}>
             <img alt='Shaker' src='./images/shaker.jpeg' />
-        </Link>
+            </Link>
                 </div>
                 <div className={style.title}>czym by tu się dzisiaj napier***ić ....?</div>
                 <div className={style.menu} onClick={this.handleClick}>Menu</div>
-               
-                <div className={style.links}>
                 <CSSTransition {...transitionStyles} active={this.state.active}>
+                <div className={style.links}>
+                
                         <Links data={this.state.links} />
+                        </div>
                 </CSSTransition>
-                </div>
+                
      
             </header>
         );
