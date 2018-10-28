@@ -1,4 +1,5 @@
 const webpack = require("webpack");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
     module: {
@@ -48,6 +49,9 @@ module.exports = {
         watchOptions: {
             poll: true
           }
+    },
+    optimization: {
+      minimizer: [new UglifyJsPlugin()]
     }
    
 };
