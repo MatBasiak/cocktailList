@@ -55,9 +55,18 @@
     .menu{
         color:white;
         background-color: rgba(155, 151, 151, 0.767);
-        width: 170px;
+        width: 165px;
         height: 50px;
-        text-align: center;
+        position: relative;
+        font-size: 30px;
+
+        .titleMenu{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+
     }
     
 }
