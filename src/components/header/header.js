@@ -30,14 +30,14 @@ class Header extends Component{
         super(props)
         this.state = {
             links:[
-                {
-                    link: 'leave',
-                    name: 'Leave',
-                    type: "text",
-                    class:  style.link 
+                // {
+                //     link: 'leave',
+                //     name: 'Leave',
+                //     type: "text",
+                //     class:  style.link 
                     
             
-                },
+                // },
                 {
                     link: 'newrecipe',
                     name: 'Dodaj Koktail',
