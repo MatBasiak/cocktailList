@@ -21,11 +21,11 @@ class Footer extends Component{
                 icon: 'email.png'
             },
             {
-                link: 'www.skype.com',
+                link: 'callto://psychomati',
                 icon: 'skype.png'
             },
                 {
-                    link: 'www.linkedin.com',
+                    link: 'https://www.linkedin.com/in/mateusz-basiak-04234048/',
                     icon: 'pobrane.png'
                 }
     
