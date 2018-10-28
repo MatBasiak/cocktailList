@@ -2,6 +2,26 @@ import React,{Component} from 'react';
 import style from './header.scss';
 import { Link } from 'react-router-dom';
 import Links from '../links'
+import { CSSTransition, transit } from "react-css-transition";
+
+
+const transitionStyles = {
+    defaultStyle: {
+        transform: "translate(-200px, 0)",
+        opacity: 0,
+    },
+    enterStyle: {
+        transform: transit("translate(0, 0)", 500, "ease-in-out"),
+        opacity:0.5,
+    },
+    leaveStyle: {
+        transform: transit("translate(-200px, 0)", 500, "ease-in-out"),
+        opacity:0.5,
+    },
+    activeStyle: {
+      transform: "translate(0, 0)",
+    },
+  };
 
 
 
@@ -36,13 +56,16 @@ class Header extends Component{
                     type: "text",
                     class:style.link
                 }
-            ]
+            ],
+            active: false
         }
       
                 
 }
     
-
+handleClick=()=>{
+    this.setState({active: !this.state.active});
+  }
     
     render() {
         return (
@@ -53,9 +76,12 @@ class Header extends Component{
         </Link>
                 </div>
                 <div className={style.title}>czym by tu się dzisiaj napier***ić ....?</div>
-                <div className={style.menu} >Menu</div>
+                <div className={style.menu} onClick={this.handleClick}>Menu</div>
+               
                 <div className={style.links}>
-                    <Links data={this.state.links} />
+                <CSSTransition {...transitionStyles} active={this.state.active}>
+                        <Links data={this.state.links} />
+                </CSSTransition>
                 </div>
      
             </header>
