@@ -1,2 +1,2 @@
 moj projekt
-ADRES : https://frechpriest.github.io/WRO_FER_W_06/
+ADRES : https://matbasiak.github.io/final_project/
