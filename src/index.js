@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
+import { HashRouter } from 'react-router-dom'
 import { firebase } from './firebase/firebase'
 import styles from './index.scss'
 
@@ -29,7 +29,7 @@ class App extends Component{
     
     render() {
         return (
-            <BrowserRouter>
+            <HashRouter>
                 {this.state.islegal ?
                     <div className={styles.container} >
                         <Header />
@@ -39,7 +39,7 @@ class App extends Component{
                     :
                     <Legal legal={()=>this.legal()}/>
                     }
-            </BrowserRouter>
+            </HashRouter>
         )
     }
 };
