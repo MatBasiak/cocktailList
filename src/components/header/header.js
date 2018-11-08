@@ -75,7 +75,7 @@ handleClick=()=>{
             <img alt='Shaker' src='./images/shaker.jpeg' />
             </Link>
                 </div>
-                <div className={style.title}>czym by tu się dzisiaj napier***ić ....?</div>
+                <div className={style.title}>czego by sie dzisiaj napic ....?</div>
                 <div className={style.menu} onClick={this.handleClick}><div className={style.titleMenu}>Menu</div></div>
                 <CSSTransition {...transitionStyles} active={this.state.active}>
                 <div className={style.links}>
