@@ -39,13 +39,12 @@
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
-  },
-  "dependencies": {
-    "@babel/preset-react": "^7.0.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
+    "webpack-dev-server": "^3.1.9",
     "i": "^0.3.6",
     "npm": "^6.4.1",
-    "react-css-transition": "^0.7.4"
+    "react-css-transition": "^0.7.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1"
   }
+  
 }
